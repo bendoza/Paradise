@@ -1,0 +1,12 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@font-face {
+    font-family: 'ParadiseCity';
+    src: url('./assets/paradise_city.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
