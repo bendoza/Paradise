@@ -10,3 +10,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Overpass';
+    src: url('./assets/Overpass.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: 'OverpassBold';
+    src: url('./assets/OverpassBold.woff') format('woff');
+    font-weight: bold;
+    font-style: bold;
+}
