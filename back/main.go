@@ -43,7 +43,7 @@ func GetData(w http.ResponseWriter, r *http.Request, value string) {
 		}
 
 		var data struct {
-			Values [][]string `json: "values"`
+			Values [][]string `json:"values"`
 		}
 
 		err = json.Unmarshal(body, &data)
@@ -70,19 +70,19 @@ func main() {
 	r := mux.NewRouter()
 
 	r.HandleFunc("/GetSpiritTypes", func(w http.ResponseWriter, r *http.Request) {
-		GetData(w, r, "BOMDrinks!A2:A20")
+		GetData(w, r, "ParadiseCraftDistributors!A2:A20")
 	}).Methods("GET")
 
 	r.HandleFunc("/GetWineTypes", func(w http.ResponseWriter, r *http.Request) {
-		GetData(w, r, "BOMDrinks!C2:C20")
+		GetData(w, r, "ParadiseCraftDistributors!B2:B20")
 	}).Methods("GET")
 
 	r.HandleFunc("/GetProductData", func(w http.ResponseWriter, r *http.Request) {
-		GetData(w, r, "BOMDrinks!D2:M300")
+		GetData(w, r, "ParadiseCraftDistributors!D2:M300")
 	}).Methods("GET")
 
 	headers := handlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"})
 	methods := handlers.AllowedMethods([]string{"GET", "POST", "PUT", "DELETE"})
-	origins := handlers.AllowedOrigins([]string{"http://localhost:4200", "https://bomdrinks.com", "https://www.bomdrinks.com"})
+	origins := handlers.AllowedOrigins([]string{"http://localhost:4200"})
 	log.Fatal(http.ListenAndServe(":" + port, handlers.CORS(headers, methods, origins)(r)))
 }

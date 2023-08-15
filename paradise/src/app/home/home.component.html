@@ -17,16 +17,382 @@
         </div>
     </div>
     
-    <div class="pt-16 pb-4" style="background-color: rgba(0, 0, 0, 0.1); border: 2px solid rgba(89,132,151,255);">
-        <div class="text-4xl text-center">
+    <div class="pt-8 pb-4" style="background-color: rgba(0, 0, 0, 0.1); border: 2px solid rgba(89,132,151,255);">
+        <div class="text-7xl flex justify-center overpass-bold-class">
             Spirits
         </div>
+        <mat-tab-group>
+            <mat-tab [label]="tab" *ngFor="let tab of spiritTypes; let i = index;">
+                <ng-template matTabContent>
+
+                    <div class="text-xl flex px-4 justify-between grid-cols-6">
+                        <div class="col-span-1">
+                            Product
+                        </div>
+                        <div class="col-span-1">
+                            Size
+                        </div>
+                        <div class="col-span-1">
+                            Units per Case
+                        </div>
+                        <div class="col-span-1">
+                            Price per Bottle in 1 Case
+                        </div>
+                        <div class="col-span-1">
+                            Price per Bottle in 3 Cases
+                        </div>
+                        <div class="col-span-1">
+                            Price per Bottle in 5 Cases
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Bourbon')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Cognac')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Flavored Whiskey')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Gin')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Liqueur')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Mixers')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'RTD')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Rum')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Rye')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Scotch')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Tequila')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Vodka')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Whiskey')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Wine Based')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Wine Based Liquor')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                </ng-template>
+            </mat-tab>
+        </mat-tab-group>
     </div>
     
-    <div class="pt-16 pb-4" style="background-color: rgba(0, 0, 0, 0.1); border: 2px solid rgba(89,132,151,255);">
-        <div class="text-4xl text-center">
+    <div class="pt-8 pb-4" style="background-color: rgba(0, 0, 0, 0.1); border: 2px solid rgba(89,132,151,255);">
+        <div class="text-7xl flex justify-center overpass-bold-class">
             Wines
         </div>
+        <mat-tab-group>
+            <mat-tab [label]="tab" *ngFor="let tab of wineTypes; let i = index;">
+
+                <ng-template matTabContent>
+
+                    <div class="text-xl flex justify-between grid-cols-9">
+                        <div class="col-span-1">
+                            Product
+                        </div>
+                        <div class="col-span-1">
+                            Varietal
+                        </div>
+                        <div class="col-span-1">
+                            Appellation
+                        </div>
+                        <div class="col-span-1">
+                            Vintage
+                        </div>
+                        <div class="col-span-1">
+                            Size
+                        </div>
+                        <div class="col-span-1">
+                            Units per Case
+                        </div>
+                        <div class="col-span-1">
+                            Price per Bottle in 1 Case
+                        </div>
+                        <div class="col-span-1">
+                            Price per Bottle in 3 Cases
+                        </div>
+                        <div class="col-span-1">
+                            Price per Bottle in 5 Cases
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Cabernet Franc')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Cabernet Sauvignon')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Chardonnay')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Interesting Reds')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Interesting Whites')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Malbec')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Merlot')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Nero D\'Avola')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Red Blend')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Rose')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Sangiovese')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Shiraz')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Sparkling')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'White Blend')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Zinfandel')[i]">
+                        <div class="px-12 flex grid-cols-10">
+                            <ng-container *ngFor="let row of getTabData(tab)">
+                                <ng-container *ngFor="let col of row">
+                                    <div class="col-span-1">{{ col }}</div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                </ng-template>
+            </mat-tab>
+        </mat-tab-group>
     </div>
 
 </div>
