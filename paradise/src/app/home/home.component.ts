@@ -27,16 +27,120 @@ export class HomeComponent implements OnInit {
     return this.scrapeSheetService.cognacs;
   }
 
+  getFlavoredWhiskeys(): string[][] {
+    return this.scrapeSheetService.flavoredWhiskeys;
+  }
+
+  getGins(): string[][] {
+    return this.scrapeSheetService.gins;
+  }
+
+  getLiqueurs(): string[][] {
+    return this.scrapeSheetService.liqueurs;
+  }
+
+  getMixers(): string[][] {
+    return this.scrapeSheetService.mixers;
+  }
+
+  getRTDs(): string[][] {
+    return this.scrapeSheetService.RTDs;
+  }
+
+  getRums(): string[][] {
+    return this.scrapeSheetService.rums;
+  }
+
+  getRyes(): string[][] {
+    return this.scrapeSheetService.ryes;
+  }
+
+  getScotch(): string[][] {
+    return this.scrapeSheetService.scotch;
+  }
+
+  getTequilas(): string[][] {
+    return this.scrapeSheetService.tequilas;
+  }
+
+  getVodkas(): string[][] {
+    return this.scrapeSheetService.vodkas;
+  }
+
+  getWhiskeys(): string[][] {
+    return this.scrapeSheetService.whiskeys;
+  }
+
+  getWineBaseds(): string[][] {
+    return this.scrapeSheetService.wineBaseds;
+  }
+
+  getWineBasedLiquors(): string[][] {
+    return this.scrapeSheetService.wineBasedLiquors;
+  }
+
+  getCabernetFranc(): string[][] {
+    return this.scrapeSheetService.cabernetFrancs;
+  }
+
+  getCabernetSauvignon(): string[][] {
+    return this.scrapeSheetService.cabernetSauvignons;
+  }
+
+  getChardonnays(): string[][] {
+    return this.scrapeSheetService.chardonnays;
+  }
+
   getInterestingReds(): string[][] {
     return this.scrapeSheetService.interestingReds;
   }
 
-  shouldShowTabForSpirits(spiritTypes: string[], targetValue: string): boolean[] {
-    return spiritTypes.map(tab => tab.toString().trim() === targetValue);
+  getInterestingWhites(): string[][] {
+    return this.scrapeSheetService.interestingWhites;
   }
 
-  shouldShowTabForWine(wineTypes: string[], targetValue: string): boolean[] {
-    return wineTypes.map(tab => tab.toString().trim() === targetValue);
+  getMalbecs(): string[][] {
+    return this.scrapeSheetService.malbecs;
+  }
+
+  getMerlots(): string[][] {
+    return this.scrapeSheetService.merlots;
+  }
+
+  getNeroDAvolas(): string[][] {
+    return this.scrapeSheetService.neroDAvolas;
+  }
+
+  getRedBlends(): string[][] {
+    return this.scrapeSheetService.redBlends;
+  }
+
+  getRoses(): string[][] {
+    return this.scrapeSheetService.roses;
+  }
+
+  getSangiovese(): string[][] {
+    return this.scrapeSheetService.sangioveses;
+  }
+
+  getSauvignonBlanc(): string[][] {
+    return this.scrapeSheetService.sauvignonBlancs;
+  }
+
+  getShiraz(): string[][] {
+    return this.scrapeSheetService.shiraz;
+  }
+
+  getSparklings(): string[][] {
+    return this.scrapeSheetService.sparklings;
+  }
+
+  getWhiteBlends(): string[][] {
+    return this.scrapeSheetService.whiteBlends;
+  }
+
+  getZinfandels(): string[][] {
+    return this.scrapeSheetService.zinfandels;
   }
 
   getTabData(tabValue: string): string[][] {
@@ -52,82 +156,82 @@ export class HomeComponent implements OnInit {
     }
 
     if (tabValue.toString().trim() == 'Flavored Whiskey') {
-      let tabData = this.getInterestingReds();
+      let tabData = this.getFlavoredWhiskeys();
       return tabData.map(row => row.slice(1));
     }
 
     if (tabValue.toString().trim() == 'Gin') {
-      let tabData = this.getInterestingReds();
+      let tabData = this.getGins();
       return tabData.map(row => row.slice(1));
     }
 
     if (tabValue.toString().trim() == 'Liqueur') {
-      let tabData = this.getInterestingReds();
+      let tabData = this.getLiqueurs();
       return tabData.map(row => row.slice(1));
     }
 
     if (tabValue.toString().trim() == 'Mixers') {
-      let tabData = this.getInterestingReds();
+      let tabData = this.getMixers();
       return tabData.map(row => row.slice(1));
     }
 
     if (tabValue.toString().trim() == 'RTD') {
-      let tabData = this.getInterestingReds();
+      let tabData = this.getRTDs();
       return tabData.map(row => row.slice(1));
     }
 
     if (tabValue.toString().trim() == 'Rum') {
-      let tabData = this.getInterestingReds();
+      let tabData = this.getRums();
       return tabData.map(row => row.slice(1));
     }
 
     if (tabValue.toString().trim() == 'Rye') {
-      let tabData = this.getInterestingReds();
+      let tabData = this.getRyes();
       return tabData.map(row => row.slice(1));
     }
 
     if (tabValue.toString().trim() == 'Scotch') {
-      let tabData = this.getInterestingReds();
+      let tabData = this.getScotch();
       return tabData.map(row => row.slice(1));
     }
 
     if (tabValue.toString().trim() == 'Tequila') {
-      let tabData = this.getInterestingReds();
+      let tabData = this.getTequilas();
       return tabData.map(row => row.slice(1));
     }
 
     if (tabValue.toString().trim() == 'Vodka') {
-      let tabData = this.getInterestingReds();
+      let tabData = this.getVodkas();
       return tabData.map(row => row.slice(1));
     }
 
     if (tabValue.toString().trim() == 'Whiskey') {
-      let tabData = this.getInterestingReds();
+      let tabData = this.getWhiskeys();
       return tabData.map(row => row.slice(1));
     }
 
     if (tabValue.toString().trim() == 'Wine Based') {
-      let tabData = this.getInterestingReds();
+      let tabData = this.getWineBaseds();
       return tabData.map(row => row.slice(1));
     }
 
     if (tabValue.toString().trim() == 'Wine Based Liquor') {
-      let tabData = this.getInterestingReds();
+      let tabData = this.getWineBasedLiquors();
       return tabData.map(row => row.slice(1));
     }
 
     if (tabValue.toString().trim() == 'Cabernet Franc') {
-      let tabData = this.getInterestingReds();
+      let tabData = this.getCabernetFranc();
       return tabData.map(row => row.slice(1));
     }
     
     if (tabValue.toString().trim() == 'Cabernet Sauvignon') {
-      let tabData = this.getInterestingReds();
+      let tabData = this.getCabernetSauvignon();
       return tabData.map(row => row.slice(1));
     }
 
     if (tabValue.toString().trim() == 'Chardonnay') {
-      let tabData = this.getInterestingReds();
+      let tabData = this.getChardonnays();
       return tabData.map(row => row.slice(1));
     }
 
@@ -137,68 +241,75 @@ export class HomeComponent implements OnInit {
     }
 
     if (tabValue.toString().trim() == 'Interesting Whites') {
-      let tabData = this.getInterestingReds();
+      let tabData = this.getInterestingWhites();
       return tabData.map(row => row.slice(1));
     }
 
     if (tabValue.toString().trim() == 'Malbec') {
-      let tabData = this.getInterestingReds();
+      let tabData = this.getMalbecs();
       return tabData.map(row => row.slice(1));
     }
 
     if (tabValue.toString().trim() == 'Merlot') {
-      let tabData = this.getInterestingReds();
+      let tabData = this.getMerlots();
       return tabData.map(row => row.slice(1));
     }
     
     if (tabValue.toString().trim() == 'Nero D\'Avola') {
-      let tabData = this.getInterestingReds();
+      let tabData = this.getNeroDAvolas();
       return tabData.map(row => row.slice(1));
     }
 
     if (tabValue.toString().trim() == 'Red Blend') {
-      let tabData = this.getInterestingReds();
+      let tabData = this.getRedBlends();
       return tabData.map(row => row.slice(1));
     }
 
     if (tabValue.toString().trim() == 'Rose') {
-      let tabData = this.getInterestingReds();
+      let tabData = this.getRoses();
       return tabData.map(row => row.slice(1));
     }
 
     if (tabValue.toString().trim() == 'Sangiovese') {
-      let tabData = this.getInterestingReds();
+      let tabData = this.getSangiovese();
       return tabData.map(row => row.slice(1));
     }
 
     if (tabValue.toString().trim() == 'Sauvignon Blanc') {
-      let tabData = this.getInterestingReds();
+      let tabData = this.getSauvignonBlanc();
       return tabData.map(row => row.slice(1));
     }
 
     if (tabValue.toString().trim() == 'Shiraz') {
-      let tabData = this.getInterestingReds();
+      let tabData = this.getShiraz();
       return tabData.map(row => row.slice(1));
     }
 
     if (tabValue.toString().trim() == 'Sparkling') {
-      let tabData = this.getInterestingReds();
+      let tabData = this.getSparklings();
       return tabData.map(row => row.slice(1));
     }
 
     if (tabValue.toString().trim() == 'White Blend') {
-      let tabData = this.getInterestingReds();
+      let tabData = this.getWhiteBlends();
       return tabData.map(row => row.slice(1));
     }
 
     if (tabValue.toString().trim() == 'Zinfandel') {
-      let tabData = this.getInterestingReds();
+      let tabData = this.getZinfandels();
       return tabData.map(row => row.slice(1));
     }
 
     return [];
   }
 
+  shouldShowTabForWine(wineTypes: string[], targetValue: string): boolean[] {
+    return wineTypes.map(tab => tab.toString().trim() === targetValue);
+  }
+
+  shouldShowTabForSpirits(spiritTypes: string[], targetValue: string): boolean[] {
+    return spiritTypes.map(tab => tab.toString().trim() === targetValue);
+  }
 
   ngOnInit() {
 

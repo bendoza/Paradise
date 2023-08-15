@@ -26,7 +26,7 @@ export class SheetScrapeService {
   cabernetSauvignons: string[][] = [];
   chardonnays: string[][] = [];
   interestingReds: string[][] = [];
-  interesrtingWhites: string[][] = [];
+  interestingWhites: string[][] = [];
   malbecs: string[][] = [];
   merlots: string[][] = [];
   neroDAvolas: string[][] = [];
@@ -108,7 +108,7 @@ export class SheetScrapeService {
           this.interestingReds.push(data[i]);
         }
         else if (data[i][0] === 'Interesting Whites') {
-          this.interesrtingWhites.push(data[i]);
+          this.interestingWhites.push(data[i]);
         }
         else if (data[i][0] === 'Malbec') {
           this.malbecs.push(data[i]);

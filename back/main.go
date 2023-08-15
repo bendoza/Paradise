@@ -78,7 +78,7 @@ func main() {
 	}).Methods("GET")
 
 	r.HandleFunc("/GetProductData", func(w http.ResponseWriter, r *http.Request) {
-		GetData(w, r, "ParadiseCraftDistributors!D2:M300")
+		GetData(w, r, "ParadiseCraftDistributors!D2:N300")
 	}).Methods("GET")
 
 	headers := handlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"})

@@ -9,6 +9,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatCardModule } from '@angular/material/card';
+
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatToolbarModule,
     MatTabsModule,
     HttpClientModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,6 +9,9 @@
                 Here you can locate our catalog, and any information regarding the products we offer.
             </div>
             <div class="md:pt-16 pt-8 px-4 text-center md:text-3xl text-xl overpass-bold-class">
+                Each product name has a clickable link, taking you to the specific company who produces it.
+            </div>
+            <div class="md:pt-16 pt-8 px-4 text-center md:text-3xl text-xl overpass-bold-class">
                 For any inquiries regarding more information, please call:
                 <a href="tel:7278076517" class="underline text-center md:text-3xl text-xl overpass-bold-class">
                     (727)-807-6517
@@ -25,173 +28,437 @@
             <mat-tab [label]="tab" *ngFor="let tab of spiritTypes; let i = index;">
                 <ng-template matTabContent>
 
-                    <div class="text-xl flex px-4 justify-between grid-cols-6">
-                        <div class="col-span-1">
-                            Product
-                        </div>
-                        <div class="col-span-1">
-                            Size
-                        </div>
-                        <div class="col-span-1">
-                            Units per Case
-                        </div>
-                        <div class="col-span-1">
-                            Price per Bottle in 1 Case
-                        </div>
-                        <div class="col-span-1">
-                            Price per Bottle in 3 Cases
-                        </div>
-                        <div class="col-span-1">
-                            Price per Bottle in 5 Cases
-                        </div>
-                    </div>
-
-                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Bourbon')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Bourbon')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
 
-                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Cognac')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Cognac')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
 
-                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Flavored Whiskey')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Flavored Whiskey')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
 
-                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Gin')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Gin')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
 
-                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Liqueur')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Liqueur')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
 
-                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Mixers')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Mixers')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
 
-                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'RTD')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'RTD')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
 
-                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Rum')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Rum')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
 
-                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Rye')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Rye')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
 
-                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Scotch')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Scotch')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
 
-                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Tequila')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Tequila')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
 
-                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Vodka')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Vodka')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
 
-                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Whiskey')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Whiskey')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
 
-                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Wine Based')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Wine Based')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
 
-                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Wine Based Liquor')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForSpirits(spiritTypes, 'Wine Based Liquor')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
@@ -210,182 +477,572 @@
 
                 <ng-template matTabContent>
 
-                    <div class="text-xl flex justify-between grid-cols-9">
-                        <div class="col-span-1">
-                            Product
-                        </div>
-                        <div class="col-span-1">
-                            Varietal
-                        </div>
-                        <div class="col-span-1">
-                            Appellation
-                        </div>
-                        <div class="col-span-1">
-                            Vintage
-                        </div>
-                        <div class="col-span-1">
-                            Size
-                        </div>
-                        <div class="col-span-1">
-                            Units per Case
-                        </div>
-                        <div class="col-span-1">
-                            Price per Bottle in 1 Case
-                        </div>
-                        <div class="col-span-1">
-                            Price per Bottle in 3 Cases
-                        </div>
-                        <div class="col-span-1">
-                            Price per Bottle in 5 Cases
-                        </div>
-                    </div>
-
-                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Cabernet Franc')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Cabernet Franc')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <!-- <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Varietal:</p> {{row[1]}}
+                                    </mat-card-content> -->
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Appellation:</p> {{row[2]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Vintage:</p> {{row[3]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
 
-                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Cabernet Sauvignon')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Cabernet Sauvignon')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <!-- <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Varietal:</p> {{row[1]}}
+                                    </mat-card-content> -->
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Appellation:</p> {{row[2]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Vintage:</p> {{row[3]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
 
-                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Chardonnay')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Chardonnay')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <!-- <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Varietal:</p> {{row[1]}}
+                                    </mat-card-content> -->
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Appellation:</p> {{row[2]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Vintage:</p> {{row[3]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
 
-                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Interesting Reds')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Interesting Reds')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <!-- <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Varietal:</p> {{row[1]}}
+                                    </mat-card-content> -->
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Appellation:</p> {{row[2]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Vintage:</p> {{row[3]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
 
-                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Interesting Whites')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Interesting Whites')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <!-- <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Varietal:</p> {{row[1]}}
+                                    </mat-card-content> -->
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Appellation:</p> {{row[2]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Vintage:</p> {{row[3]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
 
-                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Malbec')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Malbec')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <!-- <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Varietal:</p> {{row[1]}}
+                                    </mat-card-content> -->
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Appellation:</p> {{row[2]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Vintage:</p> {{row[3]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
 
-                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Merlot')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Merlot')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <!-- <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Varietal:</p> {{row[1]}}
+                                    </mat-card-content> -->
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Appellation:</p> {{row[2]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Vintage:</p> {{row[3]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
 
-                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Nero D\'Avola')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Nero D\'Avola')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <!-- <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Varietal:</p> {{row[1]}}
+                                    </mat-card-content> -->
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Appellation:</p> {{row[2]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Vintage:</p> {{row[3]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
 
-                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Red Blend')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Red Blend')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <!-- <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Varietal:</p> {{row[1]}}
+                                    </mat-card-content> -->
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Appellation:</p> {{row[2]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Vintage:</p> {{row[3]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
 
-                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Rose')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Rose')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <!-- <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Varietal:</p> {{row[1]}}
+                                    </mat-card-content> -->
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Appellation:</p> {{row[2]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Vintage:</p> {{row[3]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
 
-                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Sangiovese')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Sangiovese')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <!-- <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Varietal:</p> {{row[1]}}
+                                    </mat-card-content> -->
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Appellation:</p> {{row[2]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Vintage:</p> {{row[3]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
 
-                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Shiraz')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Shiraz')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <!-- <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Varietal:</p> {{row[1]}}
+                                    </mat-card-content> -->
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Appellation:</p> {{row[2]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Vintage:</p> {{row[3]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
 
-                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Sparkling')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Sparkling')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <!-- <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Varietal:</p> {{row[1]}}
+                                    </mat-card-content> -->
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Appellation:</p> {{row[2]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Vintage:</p> {{row[3]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
 
-                    <div *ngIf="shouldShowTabForWine(wineTypes, 'White Blend')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'White Blend')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <!-- <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Varietal:</p> {{row[1]}}
+                                    </mat-card-content> -->
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Appellation:</p> {{row[2]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Vintage:</p> {{row[3]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
 
-                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Zinfandel')[i]">
-                        <div class="px-12 flex grid-cols-10">
+                    <div *ngIf="shouldShowTabForWine(wineTypes, 'Zinfandel')[i]" class="pt-4">
+                        <div class="px-12 grid grid-cols-3 gap-4">
                             <ng-container *ngFor="let row of getTabData(tab)">
-                                <ng-container *ngFor="let col of row">
-                                    <div class="col-span-1">{{ col }}</div>
-                                </ng-container>
+                                <mat-card class="text-base items-center">
+                                    <mat-card-header>
+                                        <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                        </mat-card-title>
+                                    </mat-card-header>
+                                    <!-- <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Varietal:</p> {{row[1]}}
+                                    </mat-card-content> -->
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Appellation:</p> {{row[2]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Vintage:</p> {{row[3]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Units per Case:</p> {{row[5]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 1 Case:</p> {{row[6]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 3 Cases:</p> {{row[7]}}
+                                    </mat-card-content>
+                                    <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                        <p class="text-center pr-4" style="font-weight: bold;">Price per Bottle in 5 Cases:</p> {{row[8]}}
+                                    </mat-card-content>
+                                </mat-card>
                             </ng-container>
                         </div>
                     </div>
