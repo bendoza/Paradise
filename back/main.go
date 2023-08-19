@@ -76,7 +76,7 @@ func GetData(w http.ResponseWriter, r *http.Request, value string) {
 	}
 }
 
-func AddVisit(w http.ResponseWriter, r *http.Request) {
+func PutNewVisit(w http.ResponseWriter, r *http.Request) {
 
 	// Making sure the method is a PUT request
 	if r.Method == "PUT" {
@@ -201,8 +201,8 @@ func main() {
 		GetData(w, r, "ParadiseCraftDistributors!D2:N300")
 	}).Methods("GET")
 
-	r.HandleFunc("/AddVisit", func(w http.ResponseWriter, r *http.Request) {
-		AddVisit(w, r)
+	r.HandleFunc("/PutNewVisit", func(w http.ResponseWriter, r *http.Request) {
+		PutNewVisit(w, r)
 	}).Methods("PUT")
 
 	headers := handlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"})
