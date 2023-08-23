@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   visitCount: any;
   index: number = 0;
 
-  products: any[] = ["1", "2", "3"];
+  indices: any[] = [1, 2, 3];
 
   key: any;
   id: any;
@@ -341,7 +341,7 @@ export class HomeComponent implements OnInit {
       console.error(error);
     });
 
-    const url = "http://localhost:443/AddVisit";
+    const url = "http://localhost:443/PutNewVisit";
     const requestOptions = {
       method: "PUT",
       headers: {

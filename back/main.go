@@ -198,7 +198,7 @@ func main() {
 	}).Methods("GET")
 
 	r.HandleFunc("/GetProductData", func(w http.ResponseWriter, r *http.Request) {
-		GetData(w, r, "ParadiseCraftDistributors!D2:N300")
+		GetData(w, r, "ParadiseCraftDistributors!D2:O300")
 	}).Methods("GET")
 
 	r.HandleFunc("/PutNewVisit", func(w http.ResponseWriter, r *http.Request) {
