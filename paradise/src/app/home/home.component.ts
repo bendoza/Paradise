@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SheetScrapeService } from '../sheet-scrape.service';
 import { HttpClient } from '@angular/common/http';
+import { CarouselModule } from 'primeng/carousel';
+
 
 @Component({
   selector: 'app-home',
@@ -13,6 +15,8 @@ export class HomeComponent implements OnInit {
   spiritTypes: any;
   visitCount: any;
   index: number = 0;
+
+  products: any[] = ["1", "2", "3"];
 
   key: any;
   id: any;
