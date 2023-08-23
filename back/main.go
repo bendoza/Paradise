@@ -132,7 +132,7 @@ func PutNewVisit(w http.ResponseWriter, r *http.Request) {
 		ctx := context.Background()
 
 		// Attempting to read google credentials for sheets api PUT call
-		serviceAccountKey := "/Users/bendoza/Desktop/paradise/Paradise/back/arctic-sound-388921-43b01ba0e3d1.json"
+		serviceAccountKey := "arctic-sound-388921-43b01ba0e3d1.json"
 		sa, err := os.ReadFile(serviceAccountKey)
 		if err != nil {
 			log.Fatalf("Error reading service account key: %v", err)
