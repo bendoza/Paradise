@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'paradise'`, () => {
+  it(`should have as title 'Paradise Craft Distributors Catalog'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('paradise');
+    expect(app.title).toEqual('Paradise Craft Distributors Catalog');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('paradise app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('Paradise Craft Distributors Catalog app is running!');
   });
 });

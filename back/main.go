@@ -177,6 +177,71 @@ func PutNewVisit(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+func CheckPassword(w http.ResponseWriter, r *http.Request, password string) {
+
+	// Making sure the method is a GET request
+	if r.Method == "GET" {
+
+		// Attempt to load the environment file, terminate while logging error if fails
+		err := godotenv.Load(".env")
+		if err != nil {
+    		log.Fatal("Error loading .env file")
+		}
+
+		// If not, load the key and spreadsheet ID from the env file
+		API := os.Getenv("googleApiKey")
+		ID := os.Getenv("spreadsheetId")
+
+		// Constructing URL of call via google sheets api for GET request with sheet ID, range value, and api key
+		url := "https://sheets.googleapis.com/v4/spreadsheets/" + ID + "/values/ParadiseCraftDistributors!Q2" + "?key=" + API
+
+		// Attempt get request on google sheets api, terminate and log fatal error if fails
+		response, err := http.Get(url)
+		if err != nil {
+			fmt.Println("Error:", err)
+			return
+		}
+
+		// Deferring the closing of the response body variable to whenever this (GetData) function exits
+		defer response.Body.Close()
+
+		// Initialize a variable for the response from the get request
+		var body []byte
+
+		// Attempt to read the response from the get request and store into variable initialized before
+		body, err = io.ReadAll(response.Body)
+		if err != nil {
+			fmt.Println("Error:", err)
+			return
+		}
+
+		// Initializing a 2d array to store the JSON response of the list of rows from the requested range
+		var data struct {
+			Values [][]string `json:"values"`
+		}
+
+		// Decoding the JSON data returned by the GET request
+		err = json.Unmarshal(body, &data)
+		if err != nil {
+			fmt.Println("Error:", err)
+			return
+		}
+
+		// Comparing value of spreadsheet PW to input PW and returning based on conditional
+		if (data.Values[0][0] == password) {
+			response := map[string]bool{"success": true}
+			w.Header().Set("Content-Type", "application/json")
+			w.WriteHeader(http.StatusOK)
+			json.NewEncoder(w).Encode(response)
+		} else {
+			response := map[string]bool{"success": false}
+			w.Header().Set("Content-Type", "application/json")
+			w.WriteHeader(http.StatusOK)
+			json.NewEncoder(w).Encode(response)
+		}
+	}
+}
+
 
 func main() {
 
@@ -204,6 +269,12 @@ func main() {
 	r.HandleFunc("/PutNewVisit", func(w http.ResponseWriter, r *http.Request) {
 		PutNewVisit(w, r)
 	}).Methods("PUT")
+
+	r.HandleFunc("/GetPassword/{password}", func(w http.ResponseWriter, r *http.Request) {
+		vars := mux.Vars(r)
+		password := vars["password"]
+		CheckPassword(w, r, password)
+	}).Methods("GET")
 
 	headers := handlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"})
 	methods := handlers.AllowedMethods([]string{"GET", "POST", "PUT", "DELETE"})

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'paradise';
+
+  constructor(
+    private icon:MatIconModule
+  ){}
+
+  title = 'Paradise Craft Distributors Catalog';
 }
