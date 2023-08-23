@@ -86,7 +86,7 @@ export class SheetScrapeService {
         else if (data[i][0] === 'Whiskey') {
           this.whiskeys.push(data[i]);
         }
-        else if (data[i][0] === 'Flavored Whiskeys') {
+        else if (data[i][0] === 'Flavored Whiskey') {
           this.flavoredWhiskeys.push(data[i]);
         }
         else if (data[i][0] === 'Wine Based') {
