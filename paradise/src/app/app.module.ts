@@ -10,7 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
-
+import { CarouselModule } from 'primeng/carousel';
 
 @NgModule({
   declarations: [
@@ -27,6 +27,7 @@ import { MatCardModule } from '@angular/material/card';
     MatTabsModule,
     HttpClientModule,
     MatCardModule,
+    CarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

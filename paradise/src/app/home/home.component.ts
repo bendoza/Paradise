@@ -1,16 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { SheetScrapeService } from '../sheet-scrape.service';
 import { HttpClient } from '@angular/common/http';
+import { CarouselModule } from 'primeng/carousel';
+
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent implements OnInit {
   wineTypes: any;
   spiritTypes: any;
+  visitCount: any;
   index: number = 0;
+
+  indices: any[] = [1, 2, 3];
 
   key: any;
   id: any;
@@ -311,6 +317,8 @@ export class HomeComponent implements OnInit {
     return spiritTypes.map(tab => tab.toString().trim() === targetValue);
   }
 
+  
+
   ngOnInit() {
 
     this.productData = this.scrapeSheetService.getProductData();
@@ -324,7 +332,6 @@ export class HomeComponent implements OnInit {
       console.error(error);
     });
 
-    
     fetch('http://localhost:443/GetSpiritTypes')
     .then(response => response.json())
     .then(data => {
@@ -333,5 +340,23 @@ export class HomeComponent implements OnInit {
     .catch(error => {
       console.error(error);
     });
+
+    const url = "http://localhost:443/PutNewVisit";
+    const requestOptions = {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    fetch(url, requestOptions)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Response data:", data);
+        this.visitCount = data.value;
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   }
 }
