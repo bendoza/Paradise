@@ -132,7 +132,7 @@ func PutNewVisit(w http.ResponseWriter, r *http.Request) {
 		ctx := context.Background()
 
 		// Attempting to read google credentials for sheets api PUT call
-		serviceAccountKey := "arctic-sound-388921-43b01ba0e3d1.json"
+		serviceAccountKey := "paradise-397019-12204cd8eb86.json"
 		sa, err := os.ReadFile(serviceAccountKey)
 		if err != nil {
 			log.Fatalf("Error reading service account key: %v", err)
@@ -278,6 +278,6 @@ func main() {
 
 	headers := handlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"})
 	methods := handlers.AllowedMethods([]string{"GET", "POST", "PUT", "DELETE"})
-	origins := handlers.AllowedOrigins([]string{"http://localhost:4200"})
+	origins := handlers.AllowedOrigins([]string{"https://storage.googleapis.com", "https://paradise-catalog.com", "http://localhost:4200"})
 	log.Fatal(http.ListenAndServe(":" + port, handlers.CORS(headers, methods, origins)(r)))
 }

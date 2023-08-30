@@ -43,7 +43,7 @@ export class SheetScrapeService {
 
   getProductData(): void {
 
-    fetch('http://localhost:443/GetProductData')
+    fetch('https://paradise-397019.ue.r.appspot.com/GetProductData')
     .then(response => response.json())
     .then(data => {
       for (let i = 0; i < data.length; i++) {

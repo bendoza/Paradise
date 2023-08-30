@@ -38,7 +38,7 @@ export class PasswordComponent {
 
       const passwordValue = this.password.value;
 
-      const apiUrl = `http://localhost:443/GetPassword/${passwordValue}`;
+      const apiUrl = `https://paradise-397019.ue.r.appspot.com/GetPassword/${passwordValue}`;
 
       fetch(apiUrl, {
         method: 'GET',

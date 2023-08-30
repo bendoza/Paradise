@@ -85,9 +85,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
@@ -114,9 +121,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
@@ -143,9 +157,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
@@ -172,9 +193,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
@@ -201,9 +229,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
@@ -230,9 +265,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
@@ -259,9 +301,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
@@ -288,9 +337,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
@@ -317,9 +373,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
@@ -346,9 +409,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
@@ -375,9 +445,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
@@ -404,9 +481,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
@@ -433,9 +517,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
@@ -462,9 +553,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Bottle Size:</p> {{row[4]}}
@@ -505,9 +603,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Origin:</p> {{row[10]}}
@@ -546,9 +651,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Origin:</p> {{row[10]}}
@@ -587,9 +699,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Origin:</p> {{row[10]}}
@@ -628,9 +747,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Origin:</p> {{row[10]}}
@@ -669,9 +795,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Origin:</p> {{row[10]}}
@@ -710,9 +843,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Origin:</p> {{row[10]}}
@@ -751,9 +891,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Origin:</p> {{row[10]}}
@@ -792,9 +939,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Origin:</p> {{row[10]}}
@@ -833,9 +987,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Origin:</p> {{row[10]}}
@@ -874,9 +1035,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Origin:</p> {{row[10]}}
@@ -915,9 +1083,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Origin:</p> {{row[10]}}
@@ -956,9 +1131,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Origin:</p> {{row[10]}}
@@ -997,9 +1179,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Origin:</p> {{row[10]}}
@@ -1038,9 +1227,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Origin:</p> {{row[10]}}
@@ -1079,9 +1275,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Origin:</p> {{row[10]}}
@@ -1120,9 +1323,16 @@
                             <ng-container *ngFor="let row of getTabData(tab)">
                                 <mat-card class="text-base items-center">
                                     <mat-card-header>
-                                        <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                                            <a [href]="row[9]" target="_blank">{{row[0]}}</a>
-                                        </mat-card-title>
+                                        <ng-container *ngIf="row[9]">
+                                            <mat-card-title class="text-2xl pb-4 underline" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                <a [href]="row[9]" target="_blank">{{row[0]}}</a>
+                                            </mat-card-title>
+                                        </ng-container>
+                                        <ng-container *ngIf="!row[9]">
+                                            <mat-card-title class="text-2xl pb-4" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                                {{row[0]}}
+                                            </mat-card-title>
+                                        </ng-container>
                                     </mat-card-header>
                                     <mat-card-content style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
                                         <p class="text-center pr-4" style="font-weight: bold;">Origin:</p> {{row[10]}}

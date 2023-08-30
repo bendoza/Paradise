@@ -153,6 +153,7 @@ export class HomeComponent implements OnInit {
 
     if (tabValue.toString().trim() == 'Bourbon') {
       let tabData = this.getBourbons();
+      console.log(tabData.map(row => row.slice(1)))
       return tabData.map(row => row.slice(1));
     }
 
@@ -323,7 +324,7 @@ export class HomeComponent implements OnInit {
 
     this.productData = this.scrapeSheetService.getProductData();
 
-    fetch('http://localhost:443/GetWineTypes')
+    fetch('https://paradise-397019.ue.r.appspot.com/GetWineTypes')
     .then(response => response.json())
     .then(data => {
       this.wineTypes = data
@@ -332,7 +333,7 @@ export class HomeComponent implements OnInit {
       console.error(error);
     });
 
-    fetch('http://localhost:443/GetSpiritTypes')
+    fetch('https://paradise-397019.ue.r.appspot.com/GetSpiritTypes')
     .then(response => response.json())
     .then(data => {
       this.spiritTypes = data
@@ -341,7 +342,7 @@ export class HomeComponent implements OnInit {
       console.error(error);
     });
 
-    const url = "http://localhost:443/PutNewVisit";
+    const url = "https://paradise-397019.ue.r.appspot.com/PutNewVisit";
     const requestOptions = {
       method: "PUT",
       headers: {
