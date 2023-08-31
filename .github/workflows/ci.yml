@@ -41,9 +41,9 @@ jobs:
           project_id: ${{ secrets.project_id }}
 
       - name: Delete existing files in Cloud Storage
-        run: gsutil -m rm -r gs://paradise-fl
+        run: gsutil -m rm -r gs://paradise-fl/*
 
       - name: Upload to Cloud Storage
         run: |
           cd paradise
-          gsutil -m cp -r docs/* gs://paradise-fl
+          gsutil -m cp -r docs/* gs://paradise-fl/*
