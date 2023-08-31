@@ -46,4 +46,4 @@ jobs:
       - name: Upload to Cloud Storage
         run: |
           cd paradise
-          gsutil -m cp -r docs/* gs://paradise-fl/*
+          gsutil -m cp -r docs/* gs://paradise-fl/
