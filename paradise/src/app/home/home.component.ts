@@ -153,7 +153,6 @@ export class HomeComponent implements OnInit {
 
     if (tabValue.toString().trim() == 'Bourbon') {
       let tabData = this.getBourbons();
-      console.log(tabData.map(row => row.slice(1)))
       return tabData.map(row => row.slice(1));
     }
 
