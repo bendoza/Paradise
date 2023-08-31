@@ -45,5 +45,5 @@ jobs:
 
       - name: Upload to Cloud Storage
         run: |
-          cd front
+          cd paradise
           gsutil -m cp -r docs/* gs://paradise-fl
