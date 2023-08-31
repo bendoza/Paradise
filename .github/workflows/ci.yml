@@ -24,13 +24,14 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: ./paradise
       
       - name: Build project
         env:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           project_id: ${{ secrets.project_id }}
         run: |
-          cd front
+          cd paradise
           ng build --output-path docs
   
       - name: Configure bucket
