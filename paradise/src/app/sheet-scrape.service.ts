@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class SheetScrapeService {
 
   bourbons: string[][] = [];
+  closeOutLiquors: string[][] = [];
   cognacs: string[][] = [];
   gins: string[][] = [];
   liqueurs: string[][] = [];
@@ -25,6 +26,7 @@ export class SheetScrapeService {
   cabernetFrancs: string[][] = [];
   cabernetSauvignons: string[][] = [];
   chardonnays: string[][] = [];
+  closeOutWines: string[][] = [];
   interestingReds: string[][] = [];
   interestingWhites: string[][] = [];
   malbecs: string[][] = [];
@@ -52,6 +54,9 @@ export class SheetScrapeService {
         } 
         else if (data[i][0] === 'Bourbon') {
           this.bourbons.push(data[i]);
+        }
+        else if (data[i][0] === 'Close Out Liquor') {
+          this.closeOutLiquors.push(data[i]);
         }
         else if (data[i][0] === 'Cognac') {
           this.cognacs.push(data[i]);
@@ -103,6 +108,9 @@ export class SheetScrapeService {
         }
         else if (data[i][0] === 'Chardonnay') {
           this.chardonnays.push(data[i]);
+        }
+        else if (data[i][0] === 'Close Out Wine') {
+          this.closeOutWines.push(data[i]);
         }
         else if (data[i][0] === 'Interesting Reds') {
           this.interestingReds.push(data[i]);

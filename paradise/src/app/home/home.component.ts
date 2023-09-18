@@ -29,6 +29,10 @@ export class HomeComponent implements OnInit {
     return this.scrapeSheetService.bourbons;
   }
 
+  getCloseOutLiquors(): string[][] {
+    return this.scrapeSheetService.closeOutLiquors;
+  }
+
   getCognacs(): string[][] {
     return this.scrapeSheetService.cognacs;
   }
@@ -97,6 +101,10 @@ export class HomeComponent implements OnInit {
     return this.scrapeSheetService.chardonnays;
   }
 
+  getCloseOutWines(): string[][] {
+    return this.scrapeSheetService.closeOutWines;
+  }
+
   getInterestingReds(): string[][] {
     return this.scrapeSheetService.interestingReds;
   }
@@ -153,6 +161,11 @@ export class HomeComponent implements OnInit {
 
     if (tabValue.toString().trim() == 'Bourbon') {
       let tabData = this.getBourbons();
+      return tabData.map(row => row.slice(1));
+    }
+
+    if (tabValue.toString().trim() == 'Close Out Liquor') {
+      let tabData = this.getCloseOutLiquors();
       return tabData.map(row => row.slice(1));
     }
 
@@ -238,6 +251,11 @@ export class HomeComponent implements OnInit {
 
     if (tabValue.toString().trim() == 'Chardonnay') {
       let tabData = this.getChardonnays();
+      return tabData.map(row => row.slice(1));
+    }
+
+    if (tabValue.toString().trim() == 'Close Out Wine') {
+      let tabData = this.getCloseOutWines();
       return tabData.map(row => row.slice(1));
     }
 
