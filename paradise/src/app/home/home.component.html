@@ -76,7 +76,8 @@
         <div class="text-7xl flex justify-center overpass-bold-class">
             Spirits
         </div>
-        <mat-tab-group animationDuration="500ms">
+        <div class="scrollable" (swipeleft)="onSwipeLeftSpirits()" (swiperight)="onSwipeRightSpirits()">
+            <mat-tab-group [selectedIndex]="currentSpiritIndex" animationDuration="500ms">
             <mat-tab [label]="tab" *ngFor="let tab of spiritTypes; let i = index;">
                 <ng-template matTabContent>
 
@@ -634,14 +635,16 @@
 
                 </ng-template>
             </mat-tab>
-        </mat-tab-group>
+            </mat-tab-group>
+        </div>
     </div>
     
     <div class="pt-8" style="background-color: rgba(0, 0, 0, 0.1); border: 2px solid rgba(89,132,151,255);">
         <div class="text-7xl flex justify-center overpass-bold-class">
             Wines
         </div>
-        <mat-tab-group animationDuration="500ms">
+        <div class="scrollable" (swipeleft)="onSwipeLeftWines()" (swiperight)="onSwipeRightWines()">
+            <mat-tab-group [selectedIndex]="currentWineIndex" animationDuration="500ms">
             <mat-tab [label]="tab" *ngFor="let tab of wineTypes; let i = index;">
 
                 <ng-template matTabContent>
@@ -1464,7 +1467,8 @@
 
                 </ng-template>
             </mat-tab>
-        </mat-tab-group>
+            </mat-tab-group>
+        </div>
     </div>
 
 </div>

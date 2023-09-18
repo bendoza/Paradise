@@ -11,10 +11,14 @@ import { CarouselModule } from 'primeng/carousel';
 })
 
 export class HomeComponent implements OnInit {
+
   wineTypes: any;
   spiritTypes: any;
   visitCount: any;
   index: number = 0;
+
+  currentWineIndex: number = 0;
+  currentSpiritIndex: number = 0;
 
   indices: any[] = [1, 2, 3];
 
@@ -24,6 +28,19 @@ export class HomeComponent implements OnInit {
   productData: any;
 
   constructor(private scrapeSheetService: SheetScrapeService, private http: HttpClient) {}
+
+  onSwipeLeftSpirits() {
+    const maxTabIndex = this.spiritTypes.length - 1;
+    if (this.currentSpiritIndex < maxTabIndex) {
+      this.currentSpiritIndex++;
+    }
+  }
+
+  onSwipeRightSpirits() {
+    if (this.currentSpiritIndex > 0) {
+      this.currentSpiritIndex--;
+    }
+  }
 
   getBourbons(): string[][] {
     return this.scrapeSheetService.bourbons;
@@ -87,6 +104,19 @@ export class HomeComponent implements OnInit {
 
   getWineBasedLiquors(): string[][] {
     return this.scrapeSheetService.wineBasedLiquors;
+  }
+
+  onSwipeLeftWines() {
+    const maxTabIndex = this.wineTypes.length - 1;
+    if (this.currentWineIndex < maxTabIndex) {
+      this.currentWineIndex++;
+    }
+  }
+
+  onSwipeRightWines() {
+    if (this.currentWineIndex > 0) {
+      this.currentWineIndex--;
+    }
   }
 
   getCabernetFranc(): string[][] {

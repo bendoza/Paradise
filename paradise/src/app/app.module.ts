@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +18,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { PasswordpopupComponent } from './passwordpopup/passwordpopup.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { CatalogGuard } from './catalog.guard';
+import 'hammerjs';
 
 
 const routes: Routes = [
@@ -44,6 +45,7 @@ const routes: Routes = [
     MatCardModule,
     CarouselModule,
     MatInputModule,
+    HammerModule,
     PasswordComponent,
     MatIconModule,
     MatDialogModule,
